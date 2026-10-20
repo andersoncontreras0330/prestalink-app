@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.prestalink.app",
+      "sha256_cert_fingerprints": [
+        "A3:CA:AE:CC:F1:29:5E:9D:5F:02:DD:5F:F2:C0:56:D6:30:33:8C:CC:1A:63:6A:31:61:FD:10:8A:FA:E5:F2:5A"
+      ]
+    }
+  }
+]

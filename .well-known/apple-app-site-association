@@ -1,0 +1,25 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "9F35K49DUX.com.prestalink.app"
+        ],
+        "components": [
+          {
+            "/": "/c/*"
+          },
+          {
+            "/": "/en/c/*"
+          }
+        ],
+        "appID": "9F35K49DUX.com.prestalink.app",
+        "paths": [
+          "/c/*",
+          "/en/c/*"
+        ]
+      }
+    ]
+  }
+}
