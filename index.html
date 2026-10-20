@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrestaLink</title>
+<link rel="icon" href="/marca.png">
+<link rel="stylesheet" href="/estilos.css">
+<meta name="description" content="Tus préstamos, en orden">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PrestaLink">
+<meta property="og:title" content="PrestaLink">
+<meta property="og:description" content="Tus préstamos, en orden">
+<meta property="og:image" content="https://prestalink.app/vista-previa.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<header>
+  <a class="marca" href="/"><img src="/marca.png" alt=""><span>PrestaLink</span></a>
+  <a class="idioma" href="/en/">English</a>
+</header>
+<main>
+<div class="portada">
+<img src="/marca.png" alt="">
+<h1>PrestaLink</h1>
+<p class="lema">Tus préstamos, en orden</p>
+<p>PrestaLink es una agenda para los préstamos entre personas que ya se conocen. No somos el prestamista ni buscamos prestamistas: no ponemos el dinero, no cobramos intereses y no decidimos a quién se le presta. Lo que hacemos es que las condiciones queden escritas antes de que el dinero cambie de manos, y que las cuentas de lo que se debe las lleve la app y no la memoria de cada uno.</p>
+</div>
+<div class="descargas" id="descargas">
+<a class="boton" id="iphone" href="https://apps.apple.com/app/prestalink/id6819019252">Descargar para iPhone<small>En el App Store</small></a>
+<a class="boton" id="android" href="/android.html">Descargar para Android<small>APK para Android, 79 MB</small></a>
+</div>
+</main>
+<footer>
+  <nav><a href="/android.html">Descargar para Android</a><a href="https://andersoncontreras0330.github.io/compras.html">Compras por web</a><a href="https://andersoncontreras0330.github.io/prestalink-web/privacidad.html">Política de Privacidad</a><a href="https://andersoncontreras0330.github.io/terminos.html">Términos y Condiciones</a><a href="https://andersoncontreras0330.github.io/prestalink-web/eliminar-cuenta.html">Eliminar tu cuenta</a><a href="https://andersoncontreras0330.github.io/prestalink-web/soporte.html">Soporte</a></nav>
+  <p>PrestaLink no es una entidad financiera: no presta dinero ni fija las condiciones de los préstamos, que acuerdan las personas entre sí.</p>
+  <p>PrestaLink es un producto de Anderson Contreras, República Dominicana.</p>
+  <p><a href="mailto:soporte@prestalink.app">soporte@prestalink.app</a></p>
+</footer>
+<script>
+(function () {
+var ua = navigator.userAgent;
+var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+var android = /Android/i.test(ua);
+var $ = function (id) { return document.getElementById(id); };
+if ($('descargas')) {
+  if (ios) $('android').className += ' secundario';
+  if (android) {
+    $('iphone').className += ' secundario';
+    $('descargas').insertBefore($('android'), $('iphone'));
+  }
+}
+
+})();
+</script>
+</body>
+</html>

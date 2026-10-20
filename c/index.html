@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicita tu préstamo en PrestaLink</title>
+<link rel="icon" href="/marca.png">
+<link rel="stylesheet" href="/estilos.css">
+<meta name="description" content="Abre el enlace, descarga la app y encuéntrame con mi código.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PrestaLink">
+<meta property="og:title" content="Solicítame un préstamo en PrestaLink">
+<meta property="og:description" content="Abre el enlace, descarga la app y encuéntrame con mi código.">
+<meta property="og:image" content="https://prestalink.app/vista-previa.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<header>
+  <a class="marca" href="/"><img src="/marca.png" alt=""><span>PrestaLink</span></a>
+  <a class="idioma" href="/en/c/">English</a>
+</header>
+<main>
+<div class="portada">
+<img src="/marca.png" alt="">
+<h1>Solicita tu préstamo en PrestaLink</h1>
+<p>Te compartieron el código de un prestamista. Con PrestaLink ves sus condiciones y le envías tu solicitud desde el teléfono.</p>
+</div>
+<div id="con-codigo" class="oculto">
+<div class="codigo-caja">
+<span>Código del prestamista</span>
+<strong id="codigo"></strong>
+<button id="copiar" type="button" data-hecho="Copiado">Copiar</button>
+</div>
+<p id="abrir-p"><a class="boton ancho" id="abrir" href="/">Abrir en PrestaLink</a></p>
+<p id="en-computadora" class="detalle oculto">Abre este enlace en tu teléfono para usar el código.</p>
+</div>
+<p id="sin-codigo" class="nota oculto">Este enlace no trae un código. Pídele al prestamista que te lo comparta otra vez.</p>
+<section id="descargar">
+<h2>¿Aún no tienes la app?</h2>
+<p id="no-abrio" class="nota oculto">¿No se abrió? Primero descarga la app:</p>
+<div class="descargas" id="descargas">
+<a class="boton" id="iphone" href="https://apps.apple.com/app/prestalink/id6819019252">Descargar para iPhone<small>En el App Store</small></a>
+<a class="boton" id="android" href="/android.html">Descargar para Android<small>APK para Android, 79 MB</small></a>
+</div>
+<ol><li>Descárgala con el botón de tu teléfono.</li><li>Vuelve a esta página y toca Abrir en PrestaLink: la app busca al prestamista sola.</li><li>Si no tienes cuenta, crea una de cliente. El código queda guardado y, al entrar, la app te lleva a él.</li></ol>
+<p class="detalle">También puedes escribirlo a mano: en la app, toca Solicitar un préstamo y pon el código.</p>
+</section>
+</main>
+<footer>
+  <nav><a href="/android.html">Descargar para Android</a><a href="https://andersoncontreras0330.github.io/compras.html">Compras por web</a><a href="https://andersoncontreras0330.github.io/prestalink-web/privacidad.html">Política de Privacidad</a><a href="https://andersoncontreras0330.github.io/terminos.html">Términos y Condiciones</a><a href="https://andersoncontreras0330.github.io/prestalink-web/eliminar-cuenta.html">Eliminar tu cuenta</a><a href="https://andersoncontreras0330.github.io/prestalink-web/soporte.html">Soporte</a></nav>
+  <p>PrestaLink no es una entidad financiera: no presta dinero ni fija las condiciones de los préstamos, que acuerdan las personas entre sí.</p>
+  <p>PrestaLink es un producto de Anderson Contreras, República Dominicana.</p>
+  <p><a href="mailto:soporte@prestalink.app">soporte@prestalink.app</a></p>
+</footer>
+<script>
+(function () {
+var ua = navigator.userAgent;
+var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+var android = /Android/i.test(ua);
+var $ = function (id) { return document.getElementById(id); };
+if ($('descargas')) {
+  if (ios) $('android').className += ' secundario';
+  if (android) {
+    $('iphone').className += ' secundario';
+    $('descargas').insertBefore($('android'), $('iphone'));
+  }
+}
+var partes = location.search.replace(/^\?/, '').split('&');
+var codigo = '';
+var sinApp = false;
+for (var i = 0; i < partes.length; i++) {
+  var m = /^(?:codigo=)?([A-Za-z0-9]{4,12})$/.exec(partes[i]);
+  if (m && !codigo) codigo = m[1].toUpperCase();
+  if (partes[i] === 'sinapp=1') sinApp = true;
+}
+var idioma = document.querySelector('.idioma');
+if (idioma) idioma.href += location.search;
+if (!codigo) {
+  $('sin-codigo').className = 'nota';
+  return;
+}
+$('con-codigo').className = '';
+$('codigo').textContent = codigo;
+var noAbrio = function () {
+  $('no-abrio').className = 'nota';
+  $('descargar').scrollIntoView({ behavior: 'smooth' });
+};
+if (sinApp) noAbrio();
+var abrir = $('abrir');
+var ruta = 'buscar-prestamista?codigo=' + codigo;
+if (ios) {
+  abrir.href = 'prestalink://' + ruta;
+  abrir.addEventListener('click', function () {
+    var espera = setTimeout(function () { if (!document.hidden) noAbrio(); }, 1500);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) clearTimeout(espera); });
+  });
+} else if (android) {
+  var vuelta = location.origin + location.pathname + '?' + codigo + '&sinapp=1';
+  abrir.href = 'intent://' + ruta + '#Intent;scheme=prestalink;package=com.prestalink.app;S.browser_fallback_url=' + encodeURIComponent(vuelta) + ';end';
+} else {
+  $('abrir-p').className = 'oculto';
+  $('en-computadora').className = 'detalle';
+}
+var copiar = $('copiar');
+var textoCopiar = copiar.textContent;
+var copiado = function () {
+  copiar.textContent = copiar.getAttribute('data-hecho');
+  setTimeout(function () { copiar.textContent = textoCopiar; }, 1800);
+};
+copiar.addEventListener('click', function () {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(codigo).then(copiado, function () {});
+    return;
+  }
+  var campo = document.createElement('textarea');
+  campo.value = codigo;
+  document.body.appendChild(campo);
+  campo.select();
+  try { if (document.execCommand('copy')) copiado(); } catch (e) {}
+  document.body.removeChild(campo);
+});
+})();
+</script>
+</body>
+</html>
