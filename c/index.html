@@ -41,16 +41,16 @@
 <section id="descargar">
 <h2>¿Aún no tienes la app?</h2>
 <p id="no-abrio" class="nota oculto">¿No se abrió? Primero descarga la app:</p>
-<div class="descargas" id="descargas">
-<a class="boton" id="iphone" href="https://apps.apple.com/app/prestalink/id6819019252">Descargar para iPhone<small>En el App Store</small></a>
-<a class="boton" id="android" href="/android.html">Descargar para Android<small>APK para Android, 70 MB</small></a>
+<div class="insignias" id="descargas">
+<a class="insignia-app-store" id="iphone" href="https://apps.apple.com/app/prestalink/id6819019252"><img src="/app-store-es.svg" alt="Descárgalo en el App Store" width="144" height="48"></a>
+<a class="insignia-apk" id="android" href="/android.html" aria-label="Descargar el APK para Android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.463 11.463 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg><span><small>Descarga el APK para</small><strong>Android</strong></span></a>
 </div>
 <ol><li>Descárgala con el botón de tu teléfono.</li><li>Vuelve a esta página y toca Abrir en PrestaLink: la app busca al prestamista sola.</li><li>Si no tienes cuenta, crea una de cliente. El código queda guardado y, al entrar, la app te lleva a él.</li></ol>
 <p class="detalle">También puedes escribirlo a mano: en la app, toca Solicitar un préstamo y pon el código.</p>
 </section>
 </main>
 <footer>
-  <nav><a href="/android.html">Descargar para Android</a><a href="https://andersoncontreras0330.github.io/compras.html">Compras por web</a><a href="https://andersoncontreras0330.github.io/prestalink-web/privacidad.html">Política de Privacidad</a><a href="https://andersoncontreras0330.github.io/terminos.html">Términos y Condiciones</a><a href="https://andersoncontreras0330.github.io/prestalink-web/eliminar-cuenta.html">Eliminar tu cuenta</a><a href="https://andersoncontreras0330.github.io/prestalink-web/soporte.html">Soporte</a></nav>
+  <nav><a href="/android.html">Descargar para Android</a><a href="https://andersoncontreras0330.github.io/compras.html">Compras por web</a><a href="https://ayuda.prestalink.app/privacidad.html">Política de Privacidad</a><a href="https://andersoncontreras0330.github.io/terminos.html">Términos y Condiciones</a><a href="https://ayuda.prestalink.app/eliminar-cuenta.html">Eliminar tu cuenta</a><a href="https://ayuda.prestalink.app/soporte.html">Soporte</a></nav>
   <p>PrestaLink no es una entidad financiera: no presta dinero ni fija las condiciones de los préstamos, que acuerdan las personas entre sí.</p>
   <p>PrestaLink es un producto de Anderson Contreras, República Dominicana.</p>
   <p><a href="mailto:soporte@prestalink.app">soporte@prestalink.app</a> (o <a href="mailto:prestalink.soporte@gmail.com">prestalink.soporte@gmail.com</a>)</p>
@@ -61,13 +61,7 @@ var ua = navigator.userAgent;
 var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
 var android = /Android/i.test(ua);
 var $ = function (id) { return document.getElementById(id); };
-if ($('descargas')) {
-  if (ios) $('android').className += ' secundario';
-  if (android) {
-    $('iphone').className += ' secundario';
-    $('descargas').insertBefore($('android'), $('iphone'));
-  }
-}
+if ($('descargas') && android) $('descargas').insertBefore($('android'), $('iphone'));
 var partes = location.search.replace(/^\?/, '').split('&');
 var codigo = '';
 var sinApp = false;
