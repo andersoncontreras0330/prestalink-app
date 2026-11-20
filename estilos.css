@@ -82,3 +82,13 @@ footer p { color: var(--suave); margin: 6px 0; }
 .insignia-apk span { display: flex; flex-direction: column; justify-content: center; text-align: left; }
 .insignia-apk small { font-size: 9.5px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; line-height: 1.2; opacity: 0.92; }
 .insignia-apk strong { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; }
+/* Al pie (pedido del usuario, 2026-11-19): el título y las dos insignias, alineadas con
+   los enlaces del pie y un poco más chicas (40 de alto, lo mínimo que pide Apple). */
+.pie-app { margin: 14px 0 16px; }
+footer .pie-titulo { margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--texto); }
+footer .insignias { justify-content: flex-start; gap: 10px; margin: 0; }
+footer .insignia-app-store img { height: 40px; }
+footer .insignia-apk { height: 40px; gap: 8px; padding: 0 14px 0 10px; border-radius: 7px; }
+footer .insignia-apk svg { width: 22px; height: 22px; }
+footer .insignia-apk small { font-size: 8px; }
+footer .insignia-apk strong { font-size: 16.5px; }
