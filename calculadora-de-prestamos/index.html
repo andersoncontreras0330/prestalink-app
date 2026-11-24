@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060B1A">
+<title>Calculadora de préstamos: cuota, interés y mora | PrestaLink</title>
+<link rel="icon" href="/marca.png">
+<link rel="stylesheet" href="/estilos.css">
+<link rel="stylesheet" href="/sitio.css">
+<link rel="canonical" href="https://prestalink.app/calculadora-de-prestamos/">
+<link rel="alternate" hreflang="es" href="https://prestalink.app/calculadora-de-prestamos/">
+<link rel="alternate" hreflang="en" href="https://prestalink.app/en/loan-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://prestalink.app/calculadora-de-prestamos/">
+<meta name="description" content="Calcula la cuota, el interés total y el plan de pagos de un préstamo: cuota fija, cuota nivelada, solo intereses, abonos a capital y mora. Gratis y sin registro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prestalink.app/calculadora-de-prestamos/">
+<meta property="og:site_name" content="PrestaLink">
+<meta property="og:title" content="Calculadora de préstamos: cuota, interés y mora | PrestaLink">
+<meta property="og:description" content="Calcula la cuota, el interés total y el plan de pagos de un préstamo: cuota fija, cuota nivelada, solo intereses, abonos a capital y mora. Gratis y sin registro.">
+<meta property="og:image" content="https://prestalink.app/vista-previa.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de préstamos","url":"https://prestalink.app/calculadora-de-prestamos/","description":"Calcula la cuota, el interés total y el plan de pagos de un préstamo: cuota fija, cuota nivelada, solo intereses, abonos a capital y mora. Gratis y sin registro.","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"JavaScript","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"PrestaLink","url":"https://prestalink.app/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PrestaLink","item":"https://prestalink.app/"},{"@type":"ListItem","position":2,"name":"Calculadora de préstamos","item":"https://prestalink.app/calculadora-de-prestamos/"}]}</script>
+</head>
+<body>
+<header>
+<div class="barra">
+  <a class="marca" href="/"><img src="/marca.png" alt="" width="32" height="32"><span>Presta<b>Link</b></span></a>
+  <nav class="menu" aria-label="Secciones del sitio"><a href="/calculadora-de-prestamos/" aria-current="page">Calculadora</a><a href="/control-de-prestamos/">Control de préstamos</a><a href="/empresas-de-prestamos/">Empresas</a><a href="/guias/">Guías</a><a href="/sobre-nosotros/">Sobre nosotros</a></nav>
+  <a class="idioma" href="/en/loan-calculator/" hreflang="en"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span>English</span></a>
+  <a class="bajar" href="#descargas">Descargar</a>
+  <details class="menu-movil"><summary aria-label="Menú"><i></i><i></i></summary><nav aria-label="Secciones del sitio"><a href="/calculadora-de-prestamos/" aria-current="page">Calculadora</a><a href="/control-de-prestamos/">Control de préstamos</a><a href="/empresas-de-prestamos/">Empresas</a><a href="/guias/">Guías</a><a href="/sobre-nosotros/">Sobre nosotros</a></nav></details>
+</div>
+</header>
+<main class="ancha">
+<nav class="migas" aria-label="PrestaLink"><a href="/">PrestaLink</a><i aria-hidden="true">›</i><span aria-current="page">Calculadora de préstamos</span></nav>
+<div class="cabeza-pagina">
+<h1>Calculadora de préstamos</h1>
+<p class="resumen">Escribe el monto, la tasa y el plazo. Ves la cuota, el interés total, el plan de pagos y cuánto sumaría un atraso.</p>
+</div>
+<noscript><p class="nota">La calculadora necesita JavaScript. Actívalo en tu navegador para usarla.</p></noscript>
+<form id="calc" class="calc" novalidate>
+<div class="calc-datos">
+<div class="campo"><label for="monto" id="monto-etiqueta">Monto del préstamo</label><input id="monto" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+<div class="campo"><label for="moneda" id="moneda-etiqueta">Moneda</label><select id="moneda"><option value="DOP" selected>DOP · Peso dominicano</option><option value="USD">USD · Dólar estadounidense</option><option value="COP">COP · Peso colombiano</option><option value="MXN">MXN · Peso mexicano</option><option value="ARS">ARS · Peso argentino</option><option value="CLP">CLP · Peso chileno</option><option value="PEN">PEN · Sol peruano</option><option value="EUR">EUR · Euro</option><option value="VES">VES · Bolívar</option></select></div>
+<fieldset class="tipos"><legend>Tipo de préstamo</legend>
+<label><input type="radio" name="tipo" value="cuota_fija" checked><span>Préstamo fijo</span></label>
+<label><input type="radio" name="tipo" value="nivelada"><span>Cuota nivelada (banco)</span></label>
+<label><input type="radio" name="tipo" value="saldo_decreciente"><span>Abonos a capital</span></label>
+<label><input type="radio" name="tipo" value="solo_interes"><span>Solo intereses</span></label>
+<label><input type="radio" name="tipo" value="pago_unico"><span>Pago único</span></label>
+<label><input type="radio" name="tipo" value="interes_corrido"><span>Interés corrido</span></label>
+</fieldset>
+<p class="ancho ayuda" id="tipo-nota"></p>
+<div class="campo"><label for="tasa" id="tasa-etiqueta">Tasa de interés (%)</label><input id="tasa" inputmode="decimal" autocomplete="off"></div>
+<div class="campo"><label for="periodo" id="periodo-etiqueta">Periodo de la tasa</label><select id="periodo"><option value="diario">Diaria</option><option value="semanal">Semanal</option><option value="quincenal">Quincenal</option><option value="mensual" selected>Mensual</option><option value="anual">Anual</option></select></div>
+<div class="campo"><label for="plazo" id="plazo-etiqueta">Número de cuotas</label><input id="plazo" inputmode="numeric" autocomplete="off"></div>
+<div class="campo" id="campo-pago"><label for="pago" id="pago-etiqueta">Cada cuánto se paga</label><select id="pago"><option value="diario">Cada día</option><option value="semanal">Cada semana</option><option value="quincenal">Cada quincena</option><option value="mensual" selected>Cada mes</option><option value="anual">Cada año</option></select></div>
+<p class="ancho ayuda" id="equivale" hidden></p>
+<details class="ancho" id="mora"><summary>Mora por atraso (opcional)</summary>
+<div class="calc-mora">
+<div class="campo"><label for="mora-tasa" id="mora-tasa-etiqueta">Tasa de mora (%)</label><input id="mora-tasa" inputmode="decimal" autocomplete="off"></div>
+<div class="campo"><label for="mora-atraso" id="mora-atraso-etiqueta">Días de atraso</label><input id="mora-atraso" inputmode="numeric" autocomplete="off"></div>
+<div class="campo"><label for="mora-gracia" id="mora-gracia-etiqueta">Días de gracia</label><input id="mora-gracia" inputmode="numeric" autocomplete="off"></div>
+</div>
+<p class="ayuda">En el mismo periodo que la tasa. Corre desde que terminan los días de gracia, sobre el monto de la cuota.</p>
+</details>
+</div>
+<div class="calc-total" aria-live="polite">
+<p id="vacio">Escribe el monto, la tasa y el plazo para ver el resultado.</p>
+<div id="resultado" hidden>
+<span id="total-etiqueta">Total a pagar</span>
+<strong id="total"></strong>
+<div id="renglones"></div>
+<p id="mora-resultado" hidden></p>
+<p class="calc-botones"><a class="boton claro" id="whatsapp" href="https://wa.me/" target="_blank" rel="noopener">Enviar por WhatsApp</a><button class="boton linea" id="copiar" type="button">Copiar</button></p>
+</div>
+</div>
+</form>
+<section id="plan" class="calc-plan" hidden>
+<h2>Plan de pagos</h2>
+<div class="tabla"><table><thead><tr><th scope="col">N.º</th><th scope="col">Vence</th><th scope="col">Capital</th><th scope="col">Interés</th><th scope="col">Cuota</th><th scope="col">Saldo</th></tr></thead><tbody id="filas"></tbody></table></div>
+<p><button class="boton linea" id="ver-todas" type="button" hidden></button></p>
+</section>
+<p class="detalle calc-nota">Las fechas empiezan hoy y el primer pago es un periodo después. Es una simulación: no es una oferta de préstamo. Todo se calcula en tu teléfono o computadora; no guardamos lo que escribes.</p>
+<article class="hoja guia">
+<section>
+<h2>Cómo se calcula cada tipo</h2>
+<p>El mismo préstamo puede costar distinto según cómo se cobre el interés. Este es uno de RD$10,000 al 2% mensual en 5 meses, calculado en los seis tipos:</p>
+<div class="tabla"><table>
+<thead><tr><th scope="col">Tipo</th><th scope="col">Cómo se paga</th><th scope="col">Interés total</th><th scope="col">Total</th></tr></thead>
+<tbody>
+<tr><th scope="row">Préstamo fijo</th><td>5 cuotas de RD$2,200.00</td><td>RD$1,000.00</td><td>RD$11,000.00</td></tr>
+<tr><th scope="row">Cuota nivelada (banco)</th><td>5 cuotas de RD$2,121.58</td><td>RD$607.92</td><td>RD$10,607.92</td></tr>
+<tr><th scope="row">Abonos a capital</th><td>RD$2,000 + el interés, cada mes</td><td>RD$600.00</td><td>RD$10,600.00</td></tr>
+<tr><th scope="row">Solo intereses</th><td>4 de RD$200.00 y el capital al final</td><td>RD$1,000.00</td><td>RD$11,000.00</td></tr>
+<tr><th scope="row">Pago único</th><td>Todo a los 150 días</td><td>RD$1,000.00</td><td>RD$11,000.00</td></tr>
+<tr><th scope="row">Interés corrido</th><td>El interés cada mes, el capital al pagar</td><td>RD$1,000.00</td><td>RD$11,000.00</td></tr>
+</tbody>
+</table></div>
+<p>Entre el préstamo fijo y la cuota nivelada la tasa es la misma, pero el interés no: en el fijo se cobra siempre sobre los RD$10,000 del principio y en la nivelada, sobre lo que va quedando. En <a href="/guias/como-calcular-el-interes-de-un-prestamo/">cómo calcular el interés de un préstamo</a> está paso a paso.</p>
+</section>
+<section>
+<h2>¿Tasa anual o mensual?</h2>
+<p>La calculadora pasa la tasa de un periodo a otro según cuántos hay en un año: 12 meses, 24 quincenas, 52 semanas o 365 días. Así, 24% anual es 2% mensual y 1% quincenal. Elige el periodo en que te dieron la tasa y, aparte, cada cuánto se paga.</p>
+</section>
+<section>
+<h2>¿Coincide con mi banco?</h2>
+<p>Con «Cuota nivelada» sale la cuota de capital e interés. Los bancos suelen sumar seguros, comisiones y gastos que aquí no entran, así que la de tu contrato puede ser más alta.</p>
+</section>
+<p class="nota">Las tasas de los ejemplos son solo eso, ejemplos: PrestaLink no fija ni recomienda tasas. La ley de tu país puede poner un máximo.</p>
+</article>
+<h2 class="suelto">Sigue leyendo</h2>
+<ul class="lista guias">
+<li><a href="/guias/como-calcular-el-interes-de-un-prestamo/"><span>Cómo calcular el interés de un préstamo<small>La fórmula y seis formas de cobrar el mismo préstamo.</small></span></a></li>
+<li><a href="/guias/mora-en-un-prestamo/"><span>Qué es la mora de un préstamo y cómo se calcula<small>Días de gracia, fórmula y un ejemplo.</small></span></a></li>
+<li><a href="/guias/abonos-a-capital/"><span>Abonos a capital: cómo bajan el interés<small>Cuánto interés ahorra cada abono, mes por mes.</small></span></a></li>
+</ul>
+<aside class="cierre">
+<img src="/marca.png" alt="" width="56" height="56">
+<div><h2>Lleva tus préstamos en PrestaLink</h2><p>Gratis para quien pide. Para quien presta, 30 días gratis.</p></div>
+<a class="boton" href="#descargas">Descargar la app</a>
+</aside>
+<script type="application/json" id="calc-datos">{"locale":"es","comun":{"periodo":{"diario":"diario","semanal":"semanal","quincenal":"quincenal","mensual":"mensual","anual":"anual"},"periodoFemenino":{"diario":"diaria","semanal":"semanal","quincenal":"quincenal","mensual":"mensual","anual":"anual"},"monedas":{"DOP":"Peso dominicano","USD":"Dólar estadounidense","COP":"Peso colombiano","MXN":"Peso mexicano","ARS":"Peso argentino","CLP":"Peso chileno","PEN":"Sol peruano","EUR":"Euro","VES":"Bolívar"},"paises":{},"metodosDeposito":{},"tiposDocumento":{"cedula":"Cédula","pasaporte":"Pasaporte","licencia":"Licencia de conducir","dni":"DNI","otro":"Otro"},"cadaPeriodo":{"diario":"cada día","semanal":"cada semana","quincenal":"cada quincena","mensual":"cada mes","anual":"cada año"}},"textos":{"total":"Total a pagar","totalEstimado":"Total estimado","cuota":"Cuota","primera":"Primera cuota","ultima":"Última cuota","capital":"Capital","interes":"Interés total","vence":"Último pago","cuotas":"Número de cuotas","dias":"Plazo en días","periodosHasta":"En cuántos {periodos} se pagaría","varios":{"diario":"días","semanal":"semanas","quincenal":"quincenas","mensual":"meses","anual":"años"},"equivale":"{escrita} equivale a {pago}: con esa tasa se calculan las cuotas.","moraFrase":"Una cuota de {cuota} pagada {dias} días tarde suma {mora} de mora: {total}.","verTodas":"Ver las {n} cuotas","verMenos":"Ver menos","copiar":"Copiar","copiado":"Copiado","notas":{"cuota_fija":"El interés se calcula sobre el monto original y todas las cuotas son iguales. Es lo usual entre personas.","nivelada":"La de los bancos (sistema francés): la misma cuota siempre, con el interés sobre lo que falta por pagar.","saldo_decreciente":"El interés se cobra sobre lo que se debe. Se calcula como si abonara lo mismo a capital cada periodo.","solo_interes":"Se paga solo el interés en cada cuota y el capital completo con la última.","pago_unico":"El capital y el interés, juntos en una sola fecha.","interes_corrido":"No vence: el interés corre hasta que se pague. Se calcula como si pagara el interés cada periodo y el capital al final."}},"direccion":"https://prestalink.app/calculadora-de-prestamos/"}</script>
+</main>
+<footer>
+<div class="pie-columnas">
+<div class="pie-marca"><a class="marca" href="/"><img src="/marca.png" alt="" width="32" height="32"><span>Presta<b>Link</b></span></a><p>Tus préstamos, en orden.</p>
+<p class="pie-titulo">Descarga la app</p>
+<div class="insignias" id="descargas">
+<a class="insignia-app-store" id="iphone" href="https://apps.apple.com/app/prestalink/id6819019252"><img src="/app-store-es.svg" alt="Descárgalo en el App Store" width="144" height="48"></a>
+<a class="insignia-apk" id="android" href="/android.html" aria-label="Descargar el APK para Android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.463 11.463 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg><span><small>Descarga el APK</small><strong>Android</strong></span></a>
+</div></div>
+<nav aria-label="Producto"><p class="pie-titulo">Producto</p><a href="/calculadora-de-prestamos/">Calculadora</a><a href="/control-de-prestamos/">Control de préstamos</a><a href="/empresas-de-prestamos/">Empresas</a></nav>
+<nav aria-label="Guías"><p class="pie-titulo">Guías</p><a href="/guias/como-calcular-el-interes-de-un-prestamo/">Calcular el interés</a><a href="/guias/mora-en-un-prestamo/">Calcular la mora</a><a href="/guias/abonos-a-capital/">Abonos a capital</a></nav>
+<nav aria-label="PrestaLink"><p class="pie-titulo">PrestaLink</p><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/android.html">Descargar para Android</a><a href="https://andersoncontreras0330.github.io/compras.html">Compras por web</a><a href="https://ayuda.prestalink.app/soporte.html">Soporte</a></nav>
+<nav aria-label="Legal"><p class="pie-titulo">Legal</p><a href="https://ayuda.prestalink.app/privacidad.html">Política de Privacidad</a><a href="https://andersoncontreras0330.github.io/terminos.html">Términos y Condiciones</a><a href="https://ayuda.prestalink.app/eliminar-cuenta.html">Eliminar tu cuenta</a></nav>
+</div>
+<div class="pie-legal">
+  <p>PrestaLink no es una entidad financiera: no presta dinero ni fija las condiciones de los préstamos, que acuerdan las personas entre sí.</p>
+  <p>PrestaLink es un producto de Anderson Contreras, República Dominicana.</p>
+  <p><a href="mailto:soporte@prestalink.app">soporte@prestalink.app</a> (o <a href="mailto:prestalink.soporte@gmail.com">prestalink.soporte@gmail.com</a>)</p>
+</div>
+</footer>
+<script>
+(function () {
+var ua = navigator.userAgent;
+var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+var android = /Android/i.test(ua);
+var $ = function (id) { return document.getElementById(id); };
+if ($('descargas') && android) $('descargas').insertBefore($('android'), $('iphone'));
+
+})();
+</script>
+<script src="/calculadora.js"></script>
+</body>
+</html>

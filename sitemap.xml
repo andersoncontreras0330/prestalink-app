@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://prestalink.app/</loc></url>
   <url><loc>https://prestalink.app/android.html</loc></url>
-  <url><loc>https://prestalink.app/en/</loc></url>
   <url><loc>https://prestalink.app/en/android.html</loc></url>
+  <url><loc>https://prestalink.app/</loc></url>
+  <url><loc>https://prestalink.app/sobre-nosotros/</loc></url>
+  <url><loc>https://prestalink.app/empresas-de-prestamos/</loc></url>
+  <url><loc>https://prestalink.app/calculadora-de-prestamos/</loc></url>
+  <url><loc>https://prestalink.app/control-de-prestamos/</loc></url>
+  <url><loc>https://prestalink.app/guias/</loc></url>
+  <url><loc>https://prestalink.app/guias/como-calcular-el-interes-de-un-prestamo/</loc></url>
+  <url><loc>https://prestalink.app/guias/mora-en-un-prestamo/</loc></url>
+  <url><loc>https://prestalink.app/guias/abonos-a-capital/</loc></url>
+  <url><loc>https://prestalink.app/en/</loc></url>
+  <url><loc>https://prestalink.app/en/about/</loc></url>
+  <url><loc>https://prestalink.app/en/lending-business/</loc></url>
+  <url><loc>https://prestalink.app/en/loan-calculator/</loc></url>
+  <url><loc>https://prestalink.app/en/loan-tracker/</loc></url>
+  <url><loc>https://prestalink.app/en/guides/</loc></url>
+  <url><loc>https://prestalink.app/en/guides/how-to-calculate-loan-interest/</loc></url>
+  <url><loc>https://prestalink.app/en/guides/loan-late-fees/</loc></url>
+  <url><loc>https://prestalink.app/en/guides/paying-down-principal/</loc></url>
 </urlset>

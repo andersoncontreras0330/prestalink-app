@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060B1A">
+<title>Loan calculator: installment, interest and late fees | PrestaLink</title>
+<link rel="icon" href="/marca.png">
+<link rel="stylesheet" href="/estilos.css">
+<link rel="stylesheet" href="/sitio.css">
+<link rel="canonical" href="https://prestalink.app/en/loan-calculator/">
+<link rel="alternate" hreflang="es" href="https://prestalink.app/calculadora-de-prestamos/">
+<link rel="alternate" hreflang="en" href="https://prestalink.app/en/loan-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://prestalink.app/calculadora-de-prestamos/">
+<meta name="description" content="Work out the installment, total interest and payment schedule of a loan: flat rate, level installment, interest-only, principal payments and late fees. Free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prestalink.app/en/loan-calculator/">
+<meta property="og:site_name" content="PrestaLink">
+<meta property="og:title" content="Loan calculator: installment, interest and late fees | PrestaLink">
+<meta property="og:description" content="Work out the installment, total interest and payment schedule of a loan: flat rate, level installment, interest-only, principal payments and late fees. Free.">
+<meta property="og:image" content="https://prestalink.app/vista-previa.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loan calculator","url":"https://prestalink.app/en/loan-calculator/","description":"Work out the installment, total interest and payment schedule of a loan: flat rate, level installment, interest-only, principal payments and late fees. Free.","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"JavaScript","inLanguage":"en","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"PrestaLink","url":"https://prestalink.app/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PrestaLink","item":"https://prestalink.app/en/"},{"@type":"ListItem","position":2,"name":"Loan calculator","item":"https://prestalink.app/en/loan-calculator/"}]}</script>
+</head>
+<body>
+<header>
+<div class="barra">
+  <a class="marca" href="/en/"><img src="/marca.png" alt="" width="32" height="32"><span>Presta<b>Link</b></span></a>
+  <nav class="menu" aria-label="Site sections"><a href="/en/loan-calculator/" aria-current="page">Calculator</a><a href="/en/loan-tracker/">Loan tracking</a><a href="/en/lending-business/">Business</a><a href="/en/guides/">Guides</a><a href="/en/about/">About us</a></nav>
+  <a class="idioma" href="/calculadora-de-prestamos/" hreflang="es"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span>Español</span></a>
+  <a class="bajar" href="#descargas">Get the app</a>
+  <details class="menu-movil"><summary aria-label="Menu"><i></i><i></i></summary><nav aria-label="Site sections"><a href="/en/loan-calculator/" aria-current="page">Calculator</a><a href="/en/loan-tracker/">Loan tracking</a><a href="/en/lending-business/">Business</a><a href="/en/guides/">Guides</a><a href="/en/about/">About us</a></nav></details>
+</div>
+</header>
+<main class="ancha">
+<nav class="migas" aria-label="PrestaLink"><a href="/en/">PrestaLink</a><i aria-hidden="true">›</i><span aria-current="page">Loan calculator</span></nav>
+<div class="cabeza-pagina">
+<h1>Loan calculator</h1>
+<p class="resumen">Enter the amount, the rate and the term. You get the installment, the total interest, the payment schedule and what a late payment would add.</p>
+</div>
+<noscript><p class="nota">The calculator needs JavaScript. Turn it on in your browser to use it.</p></noscript>
+<form id="calc" class="calc" novalidate>
+<div class="calc-datos">
+<div class="campo"><label for="monto" id="monto-etiqueta">Loan amount</label><input id="monto" inputmode="decimal" autocomplete="off" placeholder="0"></div>
+<div class="campo"><label for="moneda" id="moneda-etiqueta">Currency</label><select id="moneda"><option value="DOP">DOP · Dominican peso</option><option value="USD" selected>USD · US dollar</option><option value="COP">COP · Colombian peso</option><option value="MXN">MXN · Mexican peso</option><option value="ARS">ARS · Argentine peso</option><option value="CLP">CLP · Chilean peso</option><option value="PEN">PEN · Peruvian sol</option><option value="EUR">EUR · Euro</option><option value="VES">VES · Venezuelan bolívar</option></select></div>
+<fieldset class="tipos"><legend>Loan type</legend>
+<label><input type="radio" name="tipo" value="cuota_fija" checked><span>Fixed loan</span></label>
+<label><input type="radio" name="tipo" value="nivelada"><span>Level installment (bank)</span></label>
+<label><input type="radio" name="tipo" value="saldo_decreciente"><span>Principal payments</span></label>
+<label><input type="radio" name="tipo" value="solo_interes"><span>Interest-only</span></label>
+<label><input type="radio" name="tipo" value="pago_unico"><span>Single payment</span></label>
+<label><input type="radio" name="tipo" value="interes_corrido"><span>Running interest</span></label>
+</fieldset>
+<p class="ancho ayuda" id="tipo-nota"></p>
+<div class="campo"><label for="tasa" id="tasa-etiqueta">Interest rate (%)</label><input id="tasa" inputmode="decimal" autocomplete="off"></div>
+<div class="campo"><label for="periodo" id="periodo-etiqueta">Rate period</label><select id="periodo"><option value="diario">Daily</option><option value="semanal">Weekly</option><option value="quincenal">Every 15 days</option><option value="mensual" selected>Monthly</option><option value="anual">Yearly</option></select></div>
+<div class="campo"><label for="plazo" id="plazo-etiqueta">Number of installments</label><input id="plazo" inputmode="numeric" autocomplete="off"></div>
+<div class="campo" id="campo-pago"><label for="pago" id="pago-etiqueta">Payment frequency</label><select id="pago"><option value="diario">Every day</option><option value="semanal">Every week</option><option value="quincenal">Every 15 days</option><option value="mensual" selected>Every month</option><option value="anual">Every year</option></select></div>
+<p class="ancho ayuda" id="equivale" hidden></p>
+<details class="ancho" id="mora"><summary>Late fee (optional)</summary>
+<div class="calc-mora">
+<div class="campo"><label for="mora-tasa" id="mora-tasa-etiqueta">Late fee rate (%)</label><input id="mora-tasa" inputmode="decimal" autocomplete="off"></div>
+<div class="campo"><label for="mora-atraso" id="mora-atraso-etiqueta">Days late</label><input id="mora-atraso" inputmode="numeric" autocomplete="off"></div>
+<div class="campo"><label for="mora-gracia" id="mora-gracia-etiqueta">Grace days</label><input id="mora-gracia" inputmode="numeric" autocomplete="off"></div>
+</div>
+<p class="ayuda">In the same period as the rate. It starts when the grace days end, on the amount of the installment.</p>
+</details>
+</div>
+<div class="calc-total" aria-live="polite">
+<p id="vacio">Enter the amount, the rate and the term to see the result.</p>
+<div id="resultado" hidden>
+<span id="total-etiqueta">Total to pay</span>
+<strong id="total"></strong>
+<div id="renglones"></div>
+<p id="mora-resultado" hidden></p>
+<p class="calc-botones"><a class="boton claro" id="whatsapp" href="https://wa.me/" target="_blank" rel="noopener">Send on WhatsApp</a><button class="boton linea" id="copiar" type="button">Copy</button></p>
+</div>
+</div>
+</form>
+<section id="plan" class="calc-plan" hidden>
+<h2>Payment schedule</h2>
+<div class="tabla"><table><thead><tr><th scope="col">No.</th><th scope="col">Due</th><th scope="col">Principal</th><th scope="col">Interest</th><th scope="col">Payment</th><th scope="col">Balance</th></tr></thead><tbody id="filas"></tbody></table></div>
+<p><button class="boton linea" id="ver-todas" type="button" hidden></button></p>
+</section>
+<p class="detalle calc-nota">Dates start today and the first payment is one period later. This is a simulation, not a loan offer. Everything is calculated on your device; we don't store what you type.</p>
+<article class="hoja guia">
+<section>
+<h2>How each type is calculated</h2>
+<p>The same loan can cost more or less depending on how interest is charged. This is a US$10,000 loan at 2% monthly over 5 months, calculated six ways:</p>
+<div class="tabla"><table>
+<thead><tr><th scope="col">Type</th><th scope="col">How it is paid</th><th scope="col">Total interest</th><th scope="col">Total</th></tr></thead>
+<tbody>
+<tr><th scope="row">Fixed loan</th><td>5 installments of US$2,200.00</td><td>US$1,000.00</td><td>US$11,000.00</td></tr>
+<tr><th scope="row">Level installment (bank)</th><td>5 installments of US$2,121.58</td><td>US$607.92</td><td>US$10,607.92</td></tr>
+<tr><th scope="row">Principal payments</th><td>US$2,000 + interest, each month</td><td>US$600.00</td><td>US$10,600.00</td></tr>
+<tr><th scope="row">Interest-only</th><td>4 of US$200.00, principal at the end</td><td>US$1,000.00</td><td>US$11,000.00</td></tr>
+<tr><th scope="row">Single payment</th><td>All of it after 150 days</td><td>US$1,000.00</td><td>US$11,000.00</td></tr>
+<tr><th scope="row">Running interest</th><td>Interest each month, principal when repaid</td><td>US$1,000.00</td><td>US$11,000.00</td></tr>
+</tbody>
+</table></div>
+<p>The fixed loan and the level installment use the same rate, but not the same interest: the fixed loan always charges it on the original US$10,000, and the level installment on what is left. See <a href="/en/guides/how-to-calculate-loan-interest/">how to calculate loan interest</a> step by step.</p>
+</section>
+<section>
+<h2>Yearly or monthly rate?</h2>
+<p>The calculator converts the rate by how many periods there are in a year: 12 months, 24 fifteen-day periods, 52 weeks or 365 days. So 24% yearly is 2% monthly and 1% every 15 days. Choose the period your rate was quoted in and, separately, how often it is paid.</p>
+</section>
+<section>
+<h2>Will it match my bank?</h2>
+<p>"Level installment" gives you the principal and interest payment. Banks usually add insurance, commissions and fees that are not included here, so the one in your contract may be higher.</p>
+</section>
+<p class="nota">The rates in these examples are only examples: PrestaLink doesn't set or recommend rates. Your country's law may cap them.</p>
+</article>
+<h2 class="suelto">Keep reading</h2>
+<ul class="lista guias">
+<li><a href="/en/guides/how-to-calculate-loan-interest/"><span>How to calculate loan interest<small>The formula and six ways to charge the same loan.</small></span></a></li>
+<li><a href="/en/guides/loan-late-fees/"><span>Loan late fees and how to calculate them<small>Grace days, the formula and an example.</small></span></a></li>
+<li><a href="/en/guides/paying-down-principal/"><span>Paying down principal lowers your interest<small>How much interest each payment saves, month by month.</small></span></a></li>
+</ul>
+<aside class="cierre">
+<img src="/marca.png" alt="" width="56" height="56">
+<div><h2>Keep your loans in PrestaLink</h2><p>Free for borrowers. 30 days free for lenders.</p></div>
+<a class="boton" href="#descargas">Get the app</a>
+</aside>
+<script type="application/json" id="calc-datos">{"locale":"en-US","comun":{"periodo":{"diario":"daily","semanal":"weekly","quincenal":"biweekly","mensual":"monthly","anual":"yearly"},"periodoFemenino":{"diario":"daily","semanal":"weekly","quincenal":"biweekly","mensual":"monthly","anual":"yearly"},"monedas":{"DOP":"Dominican peso","USD":"US dollar","COP":"Colombian peso","MXN":"Mexican peso","ARS":"Argentine peso","CLP":"Chilean peso","PEN":"Peruvian sol","EUR":"Euro","VES":"Venezuelan bolívar"},"paises":{"República Dominicana":"Dominican Republic","Estados Unidos":"United States","México":"Mexico","Perú":"Peru","España":"Spain"},"metodosDeposito":{},"tiposDocumento":{"cedula":"National ID card","pasaporte":"Passport","licencia":"Driver's license","dni":"DNI","otro":"Other"},"cadaPeriodo":{"diario":"every day","semanal":"every week","quincenal":"every 15 days","mensual":"every month","anual":"every year"}},"textos":{"total":"Total to pay","totalEstimado":"Estimated total","cuota":"Installment","primera":"First installment","ultima":"Last installment","capital":"Principal","interes":"Total interest","vence":"Last payment","cuotas":"Number of installments","dias":"Term in days","periodosHasta":"In how many {periodos} it would be paid","varios":{"diario":"days","semanal":"weeks","quincenal":"15-day periods","mensual":"months","anual":"years"},"equivale":"{escrita} equals {pago}: that is the rate used for the installments.","moraFrase":"An installment of {cuota} paid {dias} days late adds a {mora} late fee: {total}.","verTodas":"See all {n} installments","verMenos":"See less","copiar":"Copy","copiado":"Copied","notas":{"cuota_fija":"Interest is charged on the original amount and every installment is the same. This is the usual way between people.","nivelada":"How banks do it (French amortization): always the same installment, with interest on what is left to pay.","saldo_decreciente":"Interest is charged on what is owed. Calculated as if the same amount of principal were paid each period.","solo_interes":"Only the interest is paid each time, and the full principal with the last payment.","pago_unico":"Principal and interest together, on a single date.","interes_corrido":"It has no due date: interest runs until it is paid. Calculated as if the interest were paid each period and the principal at the end."}},"direccion":"https://prestalink.app/en/loan-calculator/"}</script>
+</main>
+<footer>
+<div class="pie-columnas">
+<div class="pie-marca"><a class="marca" href="/en/"><img src="/marca.png" alt="" width="32" height="32"><span>Presta<b>Link</b></span></a><p>Your loans, in order.</p>
+<p class="pie-titulo">Get the app</p>
+<div class="insignias" id="descargas">
+<a class="insignia-app-store" id="iphone" href="https://apps.apple.com/app/prestalink/id6819019252"><img src="/app-store-en.svg" alt="Download on the App Store" width="144" height="48"></a>
+<a class="insignia-apk" id="android" href="/en/android.html" aria-label="Download the APK for Android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.463 11.463 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg><span><small>Download the APK</small><strong>Android</strong></span></a>
+</div></div>
+<nav aria-label="Product"><p class="pie-titulo">Product</p><a href="/en/loan-calculator/">Calculator</a><a href="/en/loan-tracker/">Loan tracking</a><a href="/en/lending-business/">Business</a></nav>
+<nav aria-label="Guides"><p class="pie-titulo">Guides</p><a href="/en/guides/how-to-calculate-loan-interest/">Calculate interest</a><a href="/en/guides/loan-late-fees/">Calculate late fees</a><a href="/en/guides/paying-down-principal/">Paying down principal</a></nav>
+<nav aria-label="PrestaLink"><p class="pie-titulo">PrestaLink</p><a href="/en/about/">About us</a><a href="/en/android.html">Download for Android</a><a href="https://andersoncontreras0330.github.io/en/purchases.html">Web purchases</a><a href="https://ayuda.prestalink.app/en/support.html">Support</a></nav>
+<nav aria-label="Legal"><p class="pie-titulo">Legal</p><a href="https://ayuda.prestalink.app/en/privacy.html">Privacy Policy</a><a href="https://andersoncontreras0330.github.io/en/terms.html">Terms and Conditions</a><a href="https://ayuda.prestalink.app/en/delete-account.html">Delete your account</a></nav>
+</div>
+<div class="pie-legal">
+  <p>PrestaLink is not a financial institution: it does not lend money or set loan terms, which people agree on between themselves.</p>
+  <p>PrestaLink is a product of Anderson Contreras, Dominican Republic.</p>
+  <p><a href="mailto:soporte@prestalink.app">soporte@prestalink.app</a> (or <a href="mailto:prestalink.soporte@gmail.com">prestalink.soporte@gmail.com</a>)</p>
+</div>
+</footer>
+<script>
+(function () {
+var ua = navigator.userAgent;
+var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+var android = /Android/i.test(ua);
+var $ = function (id) { return document.getElementById(id); };
+if ($('descargas') && android) $('descargas').insertBefore($('android'), $('iphone'));
+
+})();
+</script>
+<script src="/calculadora.js"></script>
+</body>
+</html>
